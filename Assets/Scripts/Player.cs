@@ -6,29 +6,41 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Player : MonoBehaviour {
 
     [SerializeField]
-    [Range(0f,4f)]
+    [Range(0f,10f)]
     [Tooltip("In m/s")]
     float xSpeed = 1f;
 
     [SerializeField]
-    [Range(0f, 4f)]
+    [Range(0f, 10f)]
     [Tooltip("In m/s")]
     float ySpeed = 1f;
 
     [SerializeField]
-    [Range(0f, 4f)]
+    [Range(0f, 10f)]
     [Tooltip("In m")]
     float xRangeMax = 2f;
 
     [SerializeField]
-    [Range(0f, 4f)]
+    [Range(0f, 10f)]
     [Tooltip("In m")]
     float yRangeMax = 2f;
 
     [SerializeField]
-    [Range(0f, 4f)]
+    [Range(0f, 10f)]
     [Tooltip("In m")]
     float yRangeMin = 1f;
+
+    [SerializeField]
+    float pitchByVerticalPositionFactor = -6f;
+
+    [SerializeField]
+    float pitchByVerticalMovementFactor = -20f;
+
+    [SerializeField]
+    float yawByHorizontalPositionFactor = 5f;
+
+    [SerializeField]
+    float rollByHorizontalMovementFactor = -20f;
 
     // Use this for initialization
     void Start () {
@@ -38,6 +50,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         MoveShip();
+        RotateShip();
     }
 
     private void MoveShip() {
@@ -53,5 +66,24 @@ public class Player : MonoBehaviour {
 
         Vector3 newLocalPosition = new Vector3(xNewLocalPosition, yNewLocalPosition, zNewlocalPosition);
         transform.localPosition = newLocalPosition;
+    }
+
+    private void RotateShip() {
+
+        float pitch = 0f;
+        float yaw = 0f;
+        float roll = 0f;
+
+        float pitchByVerticalPosition = transform.localPosition.y * pitchByVerticalPositionFactor;
+        float pitchByVerticalMovement = CrossPlatformInputManager.GetAxis("Vertical") * pitchByVerticalMovementFactor;
+        pitch = pitchByVerticalPosition + pitchByVerticalMovement;
+
+        float yawByHorizontalPosition = transform.localPosition.x * yawByHorizontalPositionFactor;
+        yaw = yawByHorizontalPosition;
+
+        float rollByHorizontalMovement = CrossPlatformInputManager.GetAxis("Horizontal") * rollByHorizontalMovementFactor;
+        roll = rollByHorizontalMovement;
+
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 }
