@@ -6,27 +6,27 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Player : MonoBehaviour {
 
     [SerializeField]
-    [Range(0f,10f)]
+    [Range(0f,100f)]
     [Tooltip("In m/s")]
     float xSpeed = 1f;
 
     [SerializeField]
-    [Range(0f, 10f)]
+    [Range(0f, 100f)]
     [Tooltip("In m/s")]
     float ySpeed = 1f;
 
     [SerializeField]
-    [Range(0f, 10f)]
+    [Range(0f, 50f)]
     [Tooltip("In m")]
     float xRangeMax = 2f;
 
     [SerializeField]
-    [Range(0f, 10f)]
+    [Range(0f, 50f)]
     [Tooltip("In m")]
     float yRangeMax = 2f;
 
     [SerializeField]
-    [Range(0f, 10f)]
+    [Range(0f, 50f)]
     [Tooltip("In m")]
     float yRangeMin = 1f;
 
