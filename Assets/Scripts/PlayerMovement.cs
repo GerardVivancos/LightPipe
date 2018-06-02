@@ -50,11 +50,24 @@ public class PlayerMovement: MonoBehaviour {
     void Start () {
 		
 	}
+    bool isMovementEnabled = true;
 	
 	// Update is called once per frame
 	void Update () {
-        MoveShip();
-        RotateShip();
+        if (isMovementEnabled) {
+            MoveShip();
+            RotateShip();
+        }
+    }
+
+    // Possibly called via string reference, be careful if you have to rename this
+    public void EnablePlayerMovement() {
+        isMovementEnabled = true;
+    }
+
+    // Possibly called via string reference, be careful if you have to rename this
+    public void DisablePlayerMovement() {
+        isMovementEnabled = false;
     }
 
     private void MoveShip() {
