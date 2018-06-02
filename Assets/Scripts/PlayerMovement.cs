@@ -46,10 +46,6 @@ public class PlayerMovement: MonoBehaviour {
     [SerializeField]
     float rollByHorizontalMovementFactor = -30f;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
     bool isMovementEnabled = true;
 	
 	// Update is called once per frame
