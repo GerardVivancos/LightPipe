@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 54831656672214776}
   - component: {fileID: 65424960826744404}
   - component: {fileID: 114624658208593024}
+  - component: {fileID: 114948448702041144}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -468,7 +469,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585843632452116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.511, z: 6.83}
+  m_LocalPosition: {x: -0, y: -0.25, z: 6.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4290253340534352}
@@ -1142,6 +1143,17 @@ MonoBehaviour:
   pitchByVerticalMovementFactor: -20
   yawByHorizontalPositionFactor: 5
   rollByHorizontalMovementFactor: -30
+--- !u!114 &114948448702041144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585843632452116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1837e392e9a2bd49bfdf5d768234431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198805208031801884
 ParticleSystem:
   m_ObjectHideFlags: 1
