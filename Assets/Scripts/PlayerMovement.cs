@@ -3,34 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour {
+public class PlayerMovement: MonoBehaviour {
 
     [Header("Speed")]
     [SerializeField]
     [Range(0f,100f)]
     [Tooltip("In m/s")]
-    float xSpeed = 1f;
+    float xSpeed = 20f;
 
     [SerializeField]
     [Range(0f, 100f)]
     [Tooltip("In m/s")]
-    float ySpeed = 1f;
+    float ySpeed = 16f;
 
     [Header("Range")]
     [SerializeField]
     [Range(0f, 50f)]
     [Tooltip("In m")]
-    float xRangeMax = 2f;
+    float xRangeMax = 9f;
 
     [SerializeField]
     [Range(0f, 50f)]
     [Tooltip("In m")]
-    float yRangeMax = 2f;
+    float yRangeMax = 5f;
 
     [SerializeField]
     [Range(0f, 50f)]
     [Tooltip("In m")]
-    float yRangeMin = 1f;
+    float yRangeMin = 5f;
 
     [Header("Pitch")]
     [SerializeField]
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour {
 
     [Header("Roll")]
     [SerializeField]
-    float rollByHorizontalMovementFactor = -20f;
+    float rollByHorizontalMovementFactor = -30f;
 
     // Use this for initialization
     void Start () {
