@@ -5,5 +5,6 @@ using UnityEngine;
 public class ShipCollisionHandler : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
+        SendMessage("DisablePlayerMovement");
     }
 }
