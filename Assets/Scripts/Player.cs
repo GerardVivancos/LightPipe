@@ -5,6 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour {
 
+    [Header("Speed")]
     [SerializeField]
     [Range(0f,100f)]
     [Tooltip("In m/s")]
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour {
     [Tooltip("In m/s")]
     float ySpeed = 1f;
 
+    [Header("Range")]
     [SerializeField]
     [Range(0f, 50f)]
     [Tooltip("In m")]
@@ -30,15 +32,17 @@ public class Player : MonoBehaviour {
     [Tooltip("In m")]
     float yRangeMin = 1f;
 
+    [Header("Pitch")]
     [SerializeField]
     float pitchByVerticalPositionFactor = -6f;
-
     [SerializeField]
     float pitchByVerticalMovementFactor = -20f;
 
+    [Header("Yaw")]
     [SerializeField]
     float yawByHorizontalPositionFactor = 5f;
 
+    [Header("Roll")]
     [SerializeField]
     float rollByHorizontalMovementFactor = -20f;
 
