@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
 
-    // Possibly called via string reference, be careful if you have to rename this
+    // Most of the methods on this class are possibly called via string reference, be careful if you have to rename this
+
     void ReloadCurrentScene () {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void ReloadCurrentSceneWithDelay (float delay) {
+        Invoke("ReloadCurrentScene", delay);
     }
 }

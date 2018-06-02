@@ -615,6 +615,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114948448702041144, guid: 8abe12c0e4697374fac9fbce01f4577b,
+        type: 2}
+      propertyPath: explosionFX
+      value: 
+      objectReference: {fileID: 1406987155}
+    - target: {fileID: 1763296292607830, guid: 8abe12c0e4697374fac9fbce01f4577b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8abe12c0e4697374fac9fbce01f4577b, type: 2}
   m_IsPrefabParent: 0
@@ -748,6 +757,11 @@ Prefab:
 --- !u!4 &1095812248 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4803804595388578, guid: 8abe12c0e4697374fac9fbce01f4577b,
+    type: 2}
+  m_PrefabInternal: {fileID: 849898885}
+--- !u!1 &1406987155 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1763296292607830, guid: 8abe12c0e4697374fac9fbce01f4577b,
     type: 2}
   m_PrefabInternal: {fileID: 849898885}
 --- !u!4 &1553515782 stripped
