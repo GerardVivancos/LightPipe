@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour {
     private void OnParticleCollision(GameObject other) {
         if (explosionFX != null) {
             GameObject fx = Instantiate(explosionFX, gameObject.transform.position, Quaternion.identity);
+            fx.transform.parent = GameObject.Find("RuntimeSpawnedObjects").transform;
             if (fx.GetComponent<ParticleSystem>() != null) {
                 var particleSystem = fx.GetComponent<ParticleSystem>().main;
                 particleSystem.startSpeedMultiplier = speedMultiplier;
