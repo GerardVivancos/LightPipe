@@ -9,7 +9,10 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float speedMultiplier = 1f;
     [SerializeField] float lifetimeMultiplier = 1f;
 
+    private ScoreBoard scoreBoard;
+
     private void Start() {
+        scoreBoard = FindObjectOfType<ScoreBoard>();
         AddNonTriggerBoxCollider();
     }
 
@@ -19,6 +22,12 @@ public class Enemy : MonoBehaviour {
     }
 
     private void OnParticleCollision(GameObject other) {
+        TriggerExplosionFX();
+        scoreBoard.IncreaseScore();
+        GameObject.Destroy(gameObject);
+    }
+
+    private void TriggerExplosionFX() {
         if (explosionFX != null) {
             GameObject fx = Instantiate(explosionFX, gameObject.transform.position, Quaternion.identity);
             fx.transform.parent = GameObject.Find("RuntimeSpawnedObjects").transform;
@@ -29,6 +38,5 @@ public class Enemy : MonoBehaviour {
                 particleSystem.stopAction = ParticleSystemStopAction.Destroy;
             }
         }
-        GameObject.Destroy(gameObject);
     }
 }
