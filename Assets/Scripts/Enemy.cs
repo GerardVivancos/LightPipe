@@ -8,8 +8,10 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject explosionFX;
     [SerializeField] float speedMultiplier = 1f;
     [SerializeField] float lifetimeMultiplier = 1f;
+    [SerializeField] int scorePerHit = 15;
 
     private ScoreBoard scoreBoard;
+
 
     private void Start() {
         scoreBoard = FindObjectOfType<ScoreBoard>();
@@ -23,7 +25,7 @@ public class Enemy : MonoBehaviour {
 
     private void OnParticleCollision(GameObject other) {
         TriggerExplosionFX();
-        scoreBoard.IncreaseScore();
+        scoreBoard.IncreaseScore(scorePerHit);
         GameObject.Destroy(gameObject);
     }
 

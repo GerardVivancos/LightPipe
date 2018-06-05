@@ -7,7 +7,6 @@ public class ScoreBoard : MonoBehaviour {
 
     private int score = 0;
     private Text scoreText;
-    private const int DEFAULT_INCREMENT = 15;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +18,7 @@ public class ScoreBoard : MonoBehaviour {
         scoreText.text = score.ToString();
 	}
 
-    public void IncreaseScore(int increment = DEFAULT_INCREMENT) {
+    public void IncreaseScore(int increment) {
         score += increment;
     }
 
