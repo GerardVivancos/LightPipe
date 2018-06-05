@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float speedMultiplier = 1f;
     [SerializeField] float lifetimeMultiplier = 1f;
     [SerializeField] int scorePerHit = 15;
+    [SerializeField] float health = 30f;
 
     private ScoreBoard scoreBoard;
 
@@ -24,6 +25,13 @@ public class Enemy : MonoBehaviour {
     }
 
     private void OnParticleCollision(GameObject other) {
+        health -= 10f;
+        if (health < Mathf.Epsilon) {
+            Die();
+        }
+    }
+
+    private void Die() {
         TriggerExplosionFX();
         scoreBoard.IncreaseScore(scorePerHit);
         GameObject.Destroy(gameObject);

@@ -114,6 +114,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8550848 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1791825091940224, guid: 8abe12c0e4697374fac9fbce01f4577b,
+    type: 2}
+  m_PrefabInternal: {fileID: 427100095}
 --- !u!1 &93692819 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd,
@@ -139,6 +144,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!1001 &103882272
 Prefab:
   m_ObjectHideFlags: 0
@@ -211,6 +218,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +508,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114624658208593024, guid: 8abe12c0e4697374fac9fbce01f4577b,
+        type: 2}
+      propertyPath: guns
+      value: 
+      objectReference: {fileID: 8550848}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8abe12c0e4697374fac9fbce01f4577b, type: 2}
   m_IsPrefabParent: 0
@@ -605,6 +619,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!1001 &465248839
 Prefab:
   m_ObjectHideFlags: 0
@@ -680,6 +696,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!1001 &618354896
 Prefab:
   m_ObjectHideFlags: 0
@@ -1038,6 +1056,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!1 &839221084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1362,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!4 &1553515782 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4563188462285950, guid: 0d044ee6c2a11014684be98347a5c142,
@@ -1395,6 +1417,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!1 &1689845782 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd,
@@ -1415,6 +1439,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!1 &1749916485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,6 +1490,8 @@ MonoBehaviour:
     type: 2}
   speedMultiplier: 1.5
   lifetimeMultiplier: 0.5
+  scorePerHit: 15
+  health: 100
 --- !u!1001 &1790269634
 Prefab:
   m_ObjectHideFlags: 0
@@ -1638,8 +1666,9 @@ GameObject:
   - component: {fileID: 1935202890}
   - component: {fileID: 1935202892}
   - component: {fileID: 1935202891}
+  - component: {fileID: 1935202893}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1702,6 +1731,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935202889}
+--- !u!114 &1935202893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935202889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280dcc09b87fd3746983485ad32912cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2037959440
 GameObject:
   m_ObjectHideFlags: 0

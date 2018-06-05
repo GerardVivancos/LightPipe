@@ -46,6 +46,10 @@ public class PlayerMovement: MonoBehaviour {
     [SerializeField]
     float rollByHorizontalMovementFactor = -30f;
 
+    [Header("Gun")]
+    [SerializeField]
+    GameObject guns;
+
     bool isMovementEnabled = true;
 	
 	// Update is called once per frame
@@ -53,6 +57,7 @@ public class PlayerMovement: MonoBehaviour {
         if (isMovementEnabled) {
             MoveShip();
             RotateShip();
+            Fire();
         }
     }
 
@@ -98,5 +103,14 @@ public class PlayerMovement: MonoBehaviour {
         roll = rollByHorizontalMovement;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
+    private void Fire() {
+        if (CrossPlatformInputManager.GetButton("Fire")) {
+            guns.SetActive(true);
+        }
+        else {
+            guns.SetActive(false);
+        }
     }
 }
